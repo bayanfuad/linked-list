@@ -1,0 +1,24 @@
+{
+  "name": "linked-list",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "Node linkedList.js",
+    "test": "jest  --verbose  --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bayanfuad/linked-list.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bayanfuad/linked-list/issues"
+  },
+  "homepage": "https://github.com/bayanfuad/linked-list#readme",
+  "devDependencies": {
+    "jest": "^29.0.2"
+  }
+}

@@ -9,7 +9,7 @@ describe('testing the linked list', () => {
     })
     describe('inserting node in the beginning of ll', () => {
         // if the ll is empty
-        it('add node to an empty ll', () => {
+        it('test adding node to an empty ll', () => {
             const ll = new LinkedList();
             ll.insert('c');
             expect(ll.head.value).toEqual('c');
@@ -17,7 +17,7 @@ describe('testing the linked list', () => {
         })
     })
     //  if the ll is not empty 
-    it('add node to a not empty ll', () => {
+    it('test adding node to a not empty ll', () => {
         const ll = new LinkedList();
         ll.insert('a');
         ll.insert('b');
@@ -28,22 +28,38 @@ describe('testing the linked list', () => {
 
 describe('append node to the end of ll',()=>{
      // if the ll is empty
-    it('append node to an empty ll', () =>{
+    it('test appending node to an empty ll', () =>{
         const ll = new LinkedList();
         ll.append('a');
         expect(ll.head.value).toEqual('a');
         expect(ll.head.next).toBeNull();
     })
      //  if the ll is not empty 
-     it('add node to a not empty ll', () => {
+     it('test appending node to a not empty ll', () => {
         const ll = new LinkedList();
         ll.append('a');
         ll.append('b');
-        ll.append('c')
+        ll.append('c');
         expect(ll.head.value).toEqual('a');
         expect(ll.head.next.value).toEqual('b');
         expect(ll.head.next.next.value).toEqual('c');
         expect(ll.head.next.next.next).toBeNull();
     })
 
+})
+
+describe('delete node in the middle of ll',()=>{
+     // if the ll is not empty
+    it('test deleting node from the middle of a not empty ll',()=>{
+        const ll = new LinkedList();
+        ll.append('a');
+        ll.append('b');
+        ll.append('c');
+        ll.append('d');
+        ll.append('e');
+        ll.delete();
+        expect(ll.head.value).toEqual('a');
+        expect(ll.head.next.value).toEqual('b');
+        expect(ll.head.next.next.value).toEqual('d');
+    })
 })

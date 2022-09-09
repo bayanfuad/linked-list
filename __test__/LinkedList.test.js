@@ -26,16 +26,16 @@ describe('testing the linked list', () => {
     })
 })
 
-describe('append node to the end of ll',()=>{
-     // if the ll is empty
-    it('test appending node to an empty ll', () =>{
+describe('append node to the end of ll', () => {
+    // if the ll is empty
+    it('test appending node to an empty ll', () => {
         const ll = new LinkedList();
         ll.append('a');
         expect(ll.head.value).toEqual('a');
         expect(ll.head.next).toBeNull();
     })
-     //  if the ll is not empty 
-     it('test appending node to a not empty ll', () => {
+    //  if the ll is not empty 
+    it('test appending node to a not empty ll', () => {
         const ll = new LinkedList();
         ll.append('a');
         ll.append('b');
@@ -48,9 +48,9 @@ describe('append node to the end of ll',()=>{
 
 })
 
-describe('delete node in the middle of ll',()=>{
-     // if the ll is not empty
-    it('test deleting node from the middle of a not empty ll',()=>{
+describe('delete node in the middle of ll', () => {
+    // if the ll is not empty
+    it('test deleting node from the middle of a not empty ll', () => {
         const ll = new LinkedList();
         ll.append('a');
         ll.append('b');
@@ -61,5 +61,18 @@ describe('delete node in the middle of ll',()=>{
         expect(ll.head.value).toEqual('a');
         expect(ll.head.next.value).toEqual('b');
         expect(ll.head.next.next.value).toEqual('d');
+    })
+})
+
+describe('add a node in a specific place', () => {
+    it('test inserting a node in a specific place', () => {
+        const ll = new LinkedList();
+        ll.append('a');
+        ll.append('c');
+        ll.append('d');
+        ll.insertTo('b', 2);
+        expect(ll.head.value).toEqual('a');
+        expect(ll.head.next.value).toEqual('b');
+        expect(ll.head.next.next.value).toEqual('c');
     })
 })

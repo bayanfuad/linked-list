@@ -23,11 +23,36 @@ class LinkedList {
         }
         else {  // ll is not empty
             let currentNode = this.head
-            while(currentNode.next){
+            while (currentNode.next) {
                 currentNode = currentNode.next;
             }
             currentNode.next = node;
         }
     }
+
+    delete() {
+        if (this.head) {
+            let firstNode = this.head;
+            let nodesNumber = 1;
+            while (firstNode.next) {
+                nodesNumber++;
+                firstNode = firstNode.next;
+            }
+            console.log(nodesNumber);
+
+            let center = Math.ceil(nodesNumber / 2);
+            let targetedNode = this.head;
+            for (let i = 1; i < center - 1; i++) {
+
+                targetedNode = targetedNode.next;
+            }
+            console.log(targetedNode);
+            targetedNode.next = targetedNode.next.next;
+
+        } else {
+            console.log('the list is empty');
+        }
+    }
+
 }
 module.exports = LinkedList;
